@@ -2,14 +2,15 @@
 using System.Data.Entity;
 using System.Data.Entity.Migrations.History;
 
-namespace GatherUp.Migrations
+namespace GatherUP.Migrations
 {
     public class MySqlHistoryContext : HistoryContext
     {
-        public MySqlHistoryContext(DbConnection connection, string defaultSchema)
-            : base(connection, defaultSchema)
+        public MySqlHistoryContext(
+            DbConnection existingConnection,
+            string defaultSchema)
+            : base(existingConnection, defaultSchema)
         {
-
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

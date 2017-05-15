@@ -1,3 +1,5 @@
+using MySql.Data.Entity;
+
 namespace GatherUp.Migrations
 {
     using System;
