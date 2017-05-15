@@ -9,6 +9,8 @@ namespace GatherUp.Models
     {
         public int Id { get; set; }
 
+        public string Pavadinimas { get; set; }
+
         public string Adresas { get; set; }
 
         public string Aprasymas { get; set; }

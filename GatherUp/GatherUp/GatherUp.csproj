@@ -250,6 +250,10 @@
     <Compile Include="Migrations\201705150000018_AddPakvietimas.Designer.cs">
       <DependentUpon>201705150000018_AddPakvietimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705150958358_AddPavadinimasToVieta.cs" />
+    <Compile Include="Migrations\201705150958358_AddPavadinimasToVieta.Designer.cs">
+      <DependentUpon>201705150958358_AddPavadinimasToVieta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\MySqlHistoryContext.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -372,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705150000018_AddPakvietimas.resx">
       <DependentUpon>201705150000018_AddPakvietimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705150958358_AddPavadinimasToVieta.resx">
+      <DependentUpon>201705150958358_AddPavadinimasToVieta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
