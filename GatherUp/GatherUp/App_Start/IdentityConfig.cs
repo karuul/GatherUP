@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using GatherUp.Models;
+using GatherUP.Models;
 
-namespace GatherUp
+namespace GatherUP
 {
     public class EmailService : IIdentityMessageService
     {

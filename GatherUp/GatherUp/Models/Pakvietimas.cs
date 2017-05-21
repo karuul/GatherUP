@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace GatherUp.Models
+namespace GatherUP.Models
 {
     public class Pakvietimas
     {
@@ -15,6 +14,5 @@ namespace GatherUp.Models
         public Busena Busena { get; set; }
 
         public int? SiuntejoId { get; set; }
-
     }
 }

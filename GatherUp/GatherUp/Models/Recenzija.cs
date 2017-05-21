@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace GatherUp.Models
+namespace GatherUP.Models
 {
     public class Recenzija
     {
@@ -12,6 +12,5 @@ namespace GatherUp.Models
         public int Ivertinimo_balas { get; set; }
 
         public string Tekstas { get; set; }
-
     }
 }

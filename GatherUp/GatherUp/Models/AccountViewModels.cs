@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace GatherUp.Models
+namespace GatherUP.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

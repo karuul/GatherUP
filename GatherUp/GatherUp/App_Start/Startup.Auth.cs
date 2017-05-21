@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using GatherUp.Models;
+using GatherUP.Models;
 
-namespace GatherUp
+namespace GatherUP
 {
     public partial class Startup
     {

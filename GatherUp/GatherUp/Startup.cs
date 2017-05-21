@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(GatherUp.Startup))]
-namespace GatherUp
+[assembly: OwinStartupAttribute(typeof(GatherUP.Startup))]
+namespace GatherUP
 {
     public partial class Startup
     {

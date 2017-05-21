@@ -1,11 +1,11 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration.Conventions;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace GatherUp.Models
+namespace GatherUP.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -19,37 +19,18 @@ namespace GatherUp.Models
         }
     }
 
-    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        static ApplicationDbContext()
-        {
-            Database.SetInitializer(new MySqlInitializer());
-        }
-
-        public DbSet<Vartotojas> Vartotojas { get; set; }
+        public DbSet<Vartotojas> Vartotojai { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
-        //public ApplicationDbContext()
-        //    : base("DefaultConnection", throwIfV1Schema: false)
-        //{
-        //    Database.SetInitializer(new MySqlInitializer());
-        //}
 
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
-        }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-
-            base.OnModelCreating(modelBuilder);
         }
     }
 }

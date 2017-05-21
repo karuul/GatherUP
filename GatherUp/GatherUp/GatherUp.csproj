@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{871AB301-2B84-412D-8406-D16FF97EE806}</ProjectGuid>
+    <ProjectGuid>{C44B9B96-9FC2-4762-9F77-ACD956C48650}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GatherUp</RootNamespace>
-    <AssemblyName>GatherUp</AssemblyName>
+    <RootNamespace>GatherUP</RootNamespace>
+    <AssemblyName>GatherUP</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -77,14 +77,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -204,64 +196,59 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142244430_Initial.cs" />
-    <Compile Include="Migrations\201705142244430_Initial.Designer.cs">
-      <DependentUpon>201705142244430_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201705212235036_Initial.cs" />
+    <Compile Include="Migrations\201705212235036_Initial.Designer.cs">
+      <DependentUpon>201705212235036_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142319232_AddVartotojas.cs" />
-    <Compile Include="Migrations\201705142319232_AddVartotojas.Designer.cs">
-      <DependentUpon>201705142319232_AddVartotojas.cs</DependentUpon>
+    <Compile Include="Migrations\201705212238315_AddVartotojas.cs" />
+    <Compile Include="Migrations\201705212238315_AddVartotojas.Designer.cs">
+      <DependentUpon>201705212238315_AddVartotojas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142321010_AddVartotojoTipas.cs" />
-    <Compile Include="Migrations\201705142321010_AddVartotojoTipas.Designer.cs">
-      <DependentUpon>201705142321010_AddVartotojoTipas.cs</DependentUpon>
+    <Compile Include="Migrations\201705212239474_AddVartotojoTipas.cs" />
+    <Compile Include="Migrations\201705212239474_AddVartotojoTipas.Designer.cs">
+      <DependentUpon>201705212239474_AddVartotojoTipas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142322373_AddVieta.cs" />
-    <Compile Include="Migrations\201705142322373_AddVieta.Designer.cs">
-      <DependentUpon>201705142322373_AddVieta.cs</DependentUpon>
+    <Compile Include="Migrations\201705212241575_AddVieta.cs" />
+    <Compile Include="Migrations\201705212241575_AddVieta.Designer.cs">
+      <DependentUpon>201705212241575_AddVieta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142323323_AddPapildomaPaslauga.cs" />
-    <Compile Include="Migrations\201705142323323_AddPapildomaPaslauga.Designer.cs">
-      <DependentUpon>201705142323323_AddPapildomaPaslauga.cs</DependentUpon>
+    <Compile Include="Migrations\201705212244231_AddPapildomaPaslauga.cs" />
+    <Compile Include="Migrations\201705212244231_AddPapildomaPaslauga.Designer.cs">
+      <DependentUpon>201705212244231_AddPapildomaPaslauga.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142341584_AddIvertinimas.cs" />
-    <Compile Include="Migrations\201705142341584_AddIvertinimas.Designer.cs">
-      <DependentUpon>201705142341584_AddIvertinimas.cs</DependentUpon>
+    <Compile Include="Migrations\201705212245333_AddIvertinimas.cs" />
+    <Compile Include="Migrations\201705212245333_AddIvertinimas.Designer.cs">
+      <DependentUpon>201705212245333_AddIvertinimas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142346134_AddRecenzija.cs" />
-    <Compile Include="Migrations\201705142346134_AddRecenzija.Designer.cs">
-      <DependentUpon>201705142346134_AddRecenzija.cs</DependentUpon>
+    <Compile Include="Migrations\201705212246183_AddRecenzija.cs" />
+    <Compile Include="Migrations\201705212246183_AddRecenzija.Designer.cs">
+      <DependentUpon>201705212246183_AddRecenzija.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142349315_AddRezervacija.cs" />
-    <Compile Include="Migrations\201705142349315_AddRezervacija.Designer.cs">
-      <DependentUpon>201705142349315_AddRezervacija.cs</DependentUpon>
+    <Compile Include="Migrations\201705212250115_AddRezervacijaAndBusena.cs" />
+    <Compile Include="Migrations\201705212250115_AddRezervacijaAndBusena.Designer.cs">
+      <DependentUpon>201705212250115_AddRezervacijaAndBusena.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705142351329_AddUzsakytosPaslaugos.cs" />
-    <Compile Include="Migrations\201705142351329_AddUzsakytosPaslaugos.Designer.cs">
-      <DependentUpon>201705142351329_AddUzsakytosPaslaugos.cs</DependentUpon>
+    <Compile Include="Migrations\201705212250582_AddUzsakytosPaslaugos.cs" />
+    <Compile Include="Migrations\201705212250582_AddUzsakytosPaslaugos.Designer.cs">
+      <DependentUpon>201705212250582_AddUzsakytosPaslaugos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705150000018_AddPakvietimas.cs" />
-    <Compile Include="Migrations\201705150000018_AddPakvietimas.Designer.cs">
-      <DependentUpon>201705150000018_AddPakvietimas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705150958358_AddPavadinimasToVieta.cs" />
-    <Compile Include="Migrations\201705150958358_AddPavadinimasToVieta.Designer.cs">
-      <DependentUpon>201705150958358_AddPavadinimasToVieta.cs</DependentUpon>
+    <Compile Include="Migrations\201705212251411_AddPakvietimas.cs" />
+    <Compile Include="Migrations\201705212251411_AddPakvietimas.Designer.cs">
+      <DependentUpon>201705212251411_AddPakvietimas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\MySqlHistoryContext.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Busena.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Ivertinimas.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\MySqlConfiguration.cs" />
     <Compile Include="Models\Pakvietimas.cs" />
     <Compile Include="Models\PapildomaPaslauga.cs" />
     <Compile Include="Models\Recenzija.cs" />
@@ -270,7 +257,6 @@
     <Compile Include="Models\Vartotojas.cs" />
     <Compile Include="Models\VartotojoTipas.cs" />
     <Compile Include="Models\Vieta.cs" />
-    <Compile Include="MySqlInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -332,11 +318,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Administrator\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -347,38 +333,35 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705142244430_Initial.resx">
-      <DependentUpon>201705142244430_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212235036_Initial.resx">
+      <DependentUpon>201705212235036_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142319232_AddVartotojas.resx">
-      <DependentUpon>201705142319232_AddVartotojas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212238315_AddVartotojas.resx">
+      <DependentUpon>201705212238315_AddVartotojas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142321010_AddVartotojoTipas.resx">
-      <DependentUpon>201705142321010_AddVartotojoTipas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212239474_AddVartotojoTipas.resx">
+      <DependentUpon>201705212239474_AddVartotojoTipas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142322373_AddVieta.resx">
-      <DependentUpon>201705142322373_AddVieta.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212241575_AddVieta.resx">
+      <DependentUpon>201705212241575_AddVieta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142323323_AddPapildomaPaslauga.resx">
-      <DependentUpon>201705142323323_AddPapildomaPaslauga.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212244231_AddPapildomaPaslauga.resx">
+      <DependentUpon>201705212244231_AddPapildomaPaslauga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142341584_AddIvertinimas.resx">
-      <DependentUpon>201705142341584_AddIvertinimas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212245333_AddIvertinimas.resx">
+      <DependentUpon>201705212245333_AddIvertinimas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142346134_AddRecenzija.resx">
-      <DependentUpon>201705142346134_AddRecenzija.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212246183_AddRecenzija.resx">
+      <DependentUpon>201705212246183_AddRecenzija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142349315_AddRezervacija.resx">
-      <DependentUpon>201705142349315_AddRezervacija.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212250115_AddRezervacijaAndBusena.resx">
+      <DependentUpon>201705212250115_AddRezervacijaAndBusena.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705142351329_AddUzsakytosPaslaugos.resx">
-      <DependentUpon>201705142351329_AddUzsakytosPaslaugos.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212250582_AddUzsakytosPaslaugos.resx">
+      <DependentUpon>201705212250582_AddUzsakytosPaslaugos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705150000018_AddPakvietimas.resx">
-      <DependentUpon>201705150000018_AddPakvietimas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705150958358_AddPavadinimasToVieta.resx">
-      <DependentUpon>201705150958358_AddPavadinimasToVieta.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705212251411_AddPakvietimas.resx">
+      <DependentUpon>201705212251411_AddPakvietimas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -397,9 +380,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>53393</DevelopmentServerPort>
+          <DevelopmentServerPort>57708</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53393/</IISUrl>
+          <IISUrl>http://localhost:57708/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

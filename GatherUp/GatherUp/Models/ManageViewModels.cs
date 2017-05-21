@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace GatherUp.Models
+namespace GatherUP.Models
 {
     public class IndexViewModel
     {

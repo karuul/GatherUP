@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace GatherUp.Models
+namespace GatherUP.Models
 {
     public enum VartotojoTipas
     {

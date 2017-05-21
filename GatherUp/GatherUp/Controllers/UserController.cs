@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using GatherUp.Models;
+using GatherUP.Models;
 
-namespace GatherUp.Controllers
+namespace GatherUP.Controllers
 {
     public class UserController : Controller
     {
@@ -27,6 +26,20 @@ namespace GatherUp.Controllers
         public ViewResult Index()
         {
             return View();
+        }
+
+        public ViewResult Administrator()
+        {
+            //var usersList = _context.Vartotojas.ToList();
+            Vartotojas vartotojas = new Vartotojas
+            {
+                Prisijungimo_vardas = "labas",
+                Vardas = "vardas"
+            };
+            List<Vartotojas> usersList = new List<Vartotojas>();
+            usersList.Add(vartotojas);
+
+            return View("~/Views/Administrator/Index.cshtml", usersList);
         }
     }
 }
