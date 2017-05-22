@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201705212251411_AddPakvietimas.Designer.cs">
       <DependentUpon>201705212251411_AddPakvietimas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705220822101_PopulateVartotojas.cs" />
+    <Compile Include="Migrations\201705220822101_PopulateVartotojas.Designer.cs">
+      <DependentUpon>201705220822101_PopulateVartotojas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Busena.cs" />
@@ -362,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705212251411_AddPakvietimas.resx">
       <DependentUpon>201705212251411_AddPakvietimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705220822101_PopulateVartotojas.resx">
+      <DependentUpon>201705220822101_PopulateVartotojas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

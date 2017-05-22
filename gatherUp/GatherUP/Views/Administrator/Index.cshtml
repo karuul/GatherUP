@@ -1,21 +1,31 @@
-﻿@model GatherUP.Models.Vartotojas
+﻿@model IEnumerable<GatherUP.Models.Vartotojas>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Users</h2>
-<table class="table table-bordered table-hover">
-    <thead>
-    <tr>
-        <th>Prisijungimo vardas</th>
-        <th>Vardas</th>
-    </tr>
-    </thead>
-    <tbody>
+<h2>Customers</h2>
+@if (!Model.Any())
+{
+    <p>We don't have any users yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
         <tr>
-            <td>@Model.Prisijungimo_vardas</td>
-            <td>@Model.Vardas</td>
+            <th>User name</th>
+            <th>Real name</th>
         </tr>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Prisijungimo_vardas</td>
+                <td>@user.Vardas</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

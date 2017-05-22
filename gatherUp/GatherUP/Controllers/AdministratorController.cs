@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity;
 using System.Web.Mvc;
 using GatherUP.Models;
 
@@ -26,12 +27,8 @@ namespace GatherUP.Controllers
 
         public ViewResult Index()
         {
-            Vartotojas var = new Vartotojas
-            {
-                Vardas = "labas",
-                Prisijungimo_vardas = "labas"
-            };
-            return View(var);
+            var vartotojai = _context.Vartotojai;
+            return View(vartotojai);
         }
     }
 }
