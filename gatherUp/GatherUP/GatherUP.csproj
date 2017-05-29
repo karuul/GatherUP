@@ -197,8 +197,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\CompanyOwnerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\RegionManagerController.cs" />
+    <Compile Include="Controllers\RezervationControllerController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +251,18 @@
     <Compile Include="Migrations\201705220822101_PopulateVartotojas.Designer.cs">
       <DependentUpon>201705220822101_PopulateVartotojas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705291223075_RemovedUserIdFromVietaModel.cs" />
+    <Compile Include="Migrations\201705291223075_RemovedUserIdFromVietaModel.Designer.cs">
+      <DependentUpon>201705291223075_RemovedUserIdFromVietaModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705291227492_PopulatedVartotojasWithCompanyOwners.cs" />
+    <Compile Include="Migrations\201705291227492_PopulatedVartotojasWithCompanyOwners.Designer.cs">
+      <DependentUpon>201705291227492_PopulatedVartotojasWithCompanyOwners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705291233580_PopulatedVieta.cs" />
+    <Compile Include="Migrations\201705291233580_PopulatedVieta.Designer.cs">
+      <DependentUpon>201705291233580_PopulatedVieta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Busena.cs" />
@@ -265,6 +281,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -324,9 +341,18 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Administrator\Index.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\CompanyOwner\Index.cshtml" />
+    <Content Include="Views\Administrator\EditUserView.cshtml" />
+    <Content Include="Views\Administrator\ManagerRegistrationView.cshtml" />
+    <Content Include="Views\User\LoginView.cshtml" />
+    <Content Include="Views\User\RegisterView.cshtml" />
+    <Content Include="Views\User\UsersListView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\RegionManager\" />
+    <Folder Include="Views\RezervationController\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -369,6 +395,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705220822101_PopulateVartotojas.resx">
       <DependentUpon>201705220822101_PopulateVartotojas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705291223075_RemovedUserIdFromVietaModel.resx">
+      <DependentUpon>201705291223075_RemovedUserIdFromVietaModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705291227492_PopulatedVartotojasWithCompanyOwners.resx">
+      <DependentUpon>201705291227492_PopulatedVartotojasWithCompanyOwners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705291233580_PopulatedVieta.resx">
+      <DependentUpon>201705291233580_PopulatedVieta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

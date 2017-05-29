@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
 using System.Web.Mvc;
 using GatherUP.Models;
 
 namespace GatherUP.Controllers
 {
-    public class AdministratorController : Controller
+    public class MemberController : Controller
     {
         private ApplicationDbContext _context;
 
-        public AdministratorController()
+        public MemberController()
         {
             _context = new ApplicationDbContext();
         }
@@ -22,11 +21,10 @@ namespace GatherUP.Controllers
             _context.Dispose();
         }
 
-
-        public ViewResult Index()
+        public ActionResult Index()
         {
-            var vartotojai = _context.Vartotojai.ToList();
-            return View(vartotojai);
+            List<Vieta> places = _context.Vietos.ToList();
+            return View(places);
         }
     }
 }

@@ -21,25 +21,37 @@ namespace GatherUP.Controllers
             _context.Dispose();
         }
 
-
-
         public ViewResult Index()
         {
             return View();
         }
 
-        public ViewResult Administrator()
+        public RedirectToRouteResult Administrator()
         {
-            //var usersList = _context.Vartotojas.ToList();
-            Vartotojas vartotojas = new Vartotojas
-            {
-                Prisijungimo_vardas = "labas",
-                Vardas = "vardas"
-            };
-            List<Vartotojas> usersList = new List<Vartotojas>();
-            usersList.Add(vartotojas);
-
-            return View("~/Views/Administrator/Index.cshtml", usersList);
+            return RedirectToAction("Index", "Administrator");
         }
+
+        public RedirectToRouteResult Member()
+        {
+            return RedirectToAction("Index", "Member");
+        }
+
+        public RedirectToRouteResult CompanyOwner()
+        {
+            return RedirectToAction("OwnerIndex", "CompanyOwner", new { istaigosSavininkas = "savininkozmona"});
+        }
+
+        public RedirectToRouteResult RegionManager()
+        {
+            return RedirectToAction("Index", "RegionManager");
+        }
+
+        public ViewResult Manager()
+        {
+            List<Vartotojas> users = _context.Vartotojai.ToList();
+
+            return View("~/Views/Administrator/Index.cshtml", users);
+        }
+
     }
 }

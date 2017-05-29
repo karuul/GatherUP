@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 <h2>Customers</h2>
 @if (!Model.Any())
 {
@@ -16,6 +18,7 @@ else
         <tr>
             <th>User name</th>
             <th>Real name</th>
+            <th>blokuoti vartotoja</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +27,7 @@ else
             <tr>
                 <td>@user.Prisijungimo_vardas</td>
                 <td>@user.Vardas</td>
+                <td>Blokuoti vartotoja</td>
             </tr>
         }
         </tbody>

@@ -19,8 +19,6 @@ namespace GatherUP.Models
 
         public Vartotojas Istaigos_savininkas { get; set; }
 
-        public int Istaigos_savininkasId { get; set; }
-
         public ICollection<PapildomaPaslauga> PapildomosPaslaugos { get; set; }
 
         public ICollection<Ivertinimas> Ivertinimas { get; set; }

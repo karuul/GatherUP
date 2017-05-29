@@ -22,6 +22,7 @@ namespace GatherUP.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Vartotojas> Vartotojai { get; set; }
+        public DbSet<Vieta> Vietos { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
