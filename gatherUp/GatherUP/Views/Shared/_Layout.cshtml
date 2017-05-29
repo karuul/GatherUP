@@ -20,16 +20,8 @@
                 @Html.ActionLink("GatherUp", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Narių posistemė", "Index", "User")</li>
-                    <li>@Html.ActionLink("Vartotojo posistemė", "Index", "Administrator")</li>
-                    <li>@Html.ActionLink("Įstaigos administravimo posistemė", "Index", "Manager")</li>
-                    <li>@Html.ActionLink("Administratoriaus posistemė", "Index", "Administrator")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+                @Html.Partial("_MenuPartial")
+                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>

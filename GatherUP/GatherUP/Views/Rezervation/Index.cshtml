@@ -1,0 +1,37 @@
+﻿@model IEnumerable<GatherUP.Models.Vieta>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Vietų sąrašas</h2>
+@if (!Model.Any())
+{
+    <p>Pakolkas nėra jokių vietų</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Pavadinimas</th>
+            <th>Aprašymas</th>
+            <th>Adresas</th>
+            <th>Rezervuoti?</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var place in Model)
+        {
+            <tr>
+                <td>@place.Pavadinimas</td>
+                <td>@place.Aprasymas</td>
+                <td>@place.Adresas</td>
+                <td>Rezervuoti</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

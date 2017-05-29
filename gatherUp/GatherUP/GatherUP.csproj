@@ -200,9 +200,8 @@
     <Compile Include="Controllers\CompanyOwnerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\RegionManagerController.cs" />
-    <Compile Include="Controllers\RezervationControllerController.cs" />
+    <Compile Include="Controllers\RezervationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -348,11 +347,12 @@
     <Content Include="Views\User\LoginView.cshtml" />
     <Content Include="Views\User\RegisterView.cshtml" />
     <Content Include="Views\User\UsersListView.cshtml" />
+    <Content Include="Views\RegionManager\Index.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\Rezervation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\RegionManager\" />
-    <Folder Include="Views\RezervationController\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

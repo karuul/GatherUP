@@ -7,11 +7,11 @@ using GatherUP.Models;
 
 namespace GatherUP.Controllers
 {
-    public class MemberController : Controller
+    public class RezervationController : Controller
     {
         private ApplicationDbContext _context;
 
-        public MemberController()
+        public RezervationController()
         {
             _context = new ApplicationDbContext();
         }

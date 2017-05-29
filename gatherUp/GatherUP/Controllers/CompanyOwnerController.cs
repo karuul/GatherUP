@@ -27,11 +27,5 @@ namespace GatherUP.Controllers
             var companyOwnerPlacesList = _context.Vietos.ToList();
             return View(companyOwnerPlacesList);
         }
-
-        public ViewResult OwnerIndex(String istaigosSavininkas)
-        {
-            var companyOwnerPlacesList = _context.Vietos.Where(c => c.Istaigos_savininkas.Prisijungimo_vardas == istaigosSavininkas).ToList();
-            return View("Index", companyOwnerPlacesList);
-        }
     }
 }
