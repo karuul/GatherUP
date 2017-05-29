@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Web.Mvc;
 using GatherUP.Models;
 
@@ -27,6 +28,38 @@ namespace GatherUP.Controllers
         {
             var vartotojai = _context.Vartotojai.ToList();
             return View(vartotojai);
+        }
+
+        public ViewResult BlockUser(string Prisijungimo_vardas)
+        {
+            Vartotojas tikrasVartotojas = _context.Vartotojai.SingleOrDefault(c => c.Prisijungimo_vardas == Prisijungimo_vardas);
+
+            if (tikrasVartotojas != null)
+            {
+                if (tikrasVartotojas.Ar_uzblokuotas == 0)
+                    tikrasVartotojas.Ar_uzblokuotas = 1;
+                else
+                    tikrasVartotojas.Ar_uzblokuotas = 0;
+                _context.Vartotojai.AddOrUpdate(tikrasVartotojas);
+                _context.SaveChanges();
+            }
+            var vartotojai = _context.Vartotojai.ToList();
+            return View("Index", vartotojai);
+        }
+
+        public ViewResult RegisterManager(Vartotojas vartotojas)
+        {
+            if (ModelState.IsValid)
+            {
+                vartotojas.VartotojoTipas = VartotojoTipas.savininkas;
+                vartotojas.Ar_uzblokuotas = 0;
+                _context.Vartotojai.Add(vartotojas);
+                _context.SaveChanges();
+                var vartotojai = _context.Vartotojai.ToList();
+                return View("Index", vartotojai);
+            }
+            return View();
+            
         }
     }
 }

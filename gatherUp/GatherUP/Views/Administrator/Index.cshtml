@@ -16,9 +16,11 @@ else
     <table class="table table-bordered table-hover">
         <thead>
         <tr>
-            <th>User name</th>
-            <th>Real name</th>
-            <th>blokuoti vartotoja</th>
+            <th>Prisijungimo vardas</th>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+            <th>Užblokuotas?</th>
+            <th>Blokuoti vartotoją</th>
         </tr>
         </thead>
         <tbody>
@@ -27,7 +29,9 @@ else
             <tr>
                 <td>@user.Prisijungimo_vardas</td>
                 <td>@user.Vardas</td>
-                <td>Blokuoti vartotoja</td>
+                <td>@user.Pavarde</td>
+                <td>@(user.Ar_uzblokuotas == 0 ? "Ne" : "Taip")</td>
+                <td>@Html.ActionLink((user.Ar_uzblokuotas == 0 ? "Blokuoti" : "Atblokuoti") + " vartotoją", "BlockUser", "Administrator", new { Prisijungimo_vardas = user.Prisijungimo_vardas}, new { onclick = "return confirm('Ar tikrai norite pašalinti šį vartotoją?')"}) </td>
             </tr>
         }
         </tbody>

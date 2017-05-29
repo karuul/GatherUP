@@ -1,6 +1,56 @@
-﻿@{
+﻿@model IEnumerable<GatherUP.Models.Vieta>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Hello</h2>
+<h2>Visų vietų sąrašas</h2>
+@if (!Model.Any())
+{
+    <p>Atsiprašome, tačiau neturime jokių vietų, pakolkas!</p>
+}
+else
+{
+    @*<table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Pavadinimas</th>
+            <th>Aprašymas</th>
+            <th>Adresas</th>
+            <th>Rezervuoti?</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var place in Model)
+        {
+            <tr>
+                <td>@place.Pavadinimas</td>
+                <td>@place.Aprasymas</td>
+                <td>@place.Adresas</td>
+                <td>Rezervuoti</td>
+            </tr>
+        }
+        </tbody>
+    </table>*@
+    foreach (var place in Model)
+     {
+         <div class="place">
+             <div class="col-sm-2">
+                 <img class="icon vcenter" src="~/Content/images/restaurant-icon.png"/>
+             </div>
+             <div class="col-sm-8 details">
+                 <h2><b>@place.Pavadinimas</b>
+                 </h2>
+                 <p>
+                     @place.Aprasymas
+                 </p>
+             </div>
+             <div class="col-sm-2 text-center">
+                 @place.Adresas
+             </div>
+             @*<div class="text-center">
+                 Rezervuoti
+             </div>*@
+         </div>
+     }
+}

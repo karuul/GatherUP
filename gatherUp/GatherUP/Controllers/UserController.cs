@@ -23,6 +23,57 @@ namespace GatherUP.Controllers
 
         public ViewResult Index()
         {
+            List<Vieta> places = _context.Vietos.ToList();
+            return View(places);
+        }
+
+        public ViewResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(Vartotojas vartotojas)
+        {
+            if (ModelState.IsValid)
+            {
+                vartotojas.VartotojoTipas = VartotojoTipas.narys;
+                vartotojas.Ar_uzblokuotas = 0;
+                _context.Vartotojai.Add(vartotojas);
+                _context.SaveChanges();
+            }
+            return View("Register");
+        }
+        
+        //[HttpPost]
+        public ActionResult Login(string vardas, string slaptazodis)
+        {
+            if (ModelState.IsValid)
+            {
+                Vartotojas tikrasVartotojas =
+                    _context.Vartotojai.SingleOrDefault(c => c.Prisijungimo_vardas == vardas);
+
+                if (tikrasVartotojas == null) return View();
+
+                if (!tikrasVartotojas.Prisijungimo_vardas.Equals(vardas))
+                {
+                    ModelState.AddModelError("Prisijungimo_vardas", "Prisijungimas nepavyko");
+                    return View();
+                }
+                else if (!tikrasVartotojas.Slaptazodis.Equals(slaptazodis))
+                {
+                    ModelState.AddModelError("Prisijungimo_vardas", "Prisijungimas nepavyko");
+                    return View();
+                }
+
+                //Prisijungimas sėkmingas
+                return View("Index");
+
+                //vartotojas.VartotojoTipas = VartotojoTipas.narys;
+                //vartotojas.Ar_uzblokuotas = 0;
+                //_context.Vartotojai.Add(vartotojas);
+                //_context.SaveChanges();
+            }
             return View();
         }
 
@@ -31,9 +82,9 @@ namespace GatherUP.Controllers
             return RedirectToAction("Index", "Administrator");
         }
 
-        public RedirectToRouteResult Member()
+        public RedirectToRouteResult Rezervation()
         {
-            return RedirectToAction("Index", "Member");
+            return RedirectToAction("Index", "Rezervation");
         }
 
         public RedirectToRouteResult CompanyOwner()

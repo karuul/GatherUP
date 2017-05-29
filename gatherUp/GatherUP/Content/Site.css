@@ -23,6 +23,27 @@ textarea {
     max-width: 280px;
 }
 
+/*Restaurant icon size*/
+.icon {
+    max-width: 100px;
+    max-height: 100px;
+    margin: auto;  
+}
+
+/* Style for restaurant description */
+.place {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.place .details {
+    padding: 5px 5px 5px 5px;
+}
+
+
 /* dropdown menu*/ 
 .dropdown-menu > li.kopie > a {
     padding-left:5px;
@@ -32,7 +53,7 @@ textarea {
     position:relative;
 }
 .dropdown-submenu>.dropdown-menu {
-    top:0;left:100%;
+    top: 50px;
     margin-top:-6px;margin-left:-1px;
     -webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;
 }
@@ -110,3 +131,11 @@ textarea {
         text-align: center;
     }
 }  
+
+.field-validation-error {
+    color: red;
+}
+
+.input-validation-error {
+    border: 2px solid red;    
+}
