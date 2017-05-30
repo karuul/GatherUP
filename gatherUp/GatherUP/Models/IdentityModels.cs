@@ -23,9 +23,6 @@ namespace GatherUP.Models
     {
         public DbSet<Vartotojas> Vartotojai { get; set; }
         public DbSet<Vieta> Vietos { get; set; }
-        public DbSet<Rezervacija> Rezervacijos { get; set; }
-        public DbSet<Pakvietimas> Pakvietimai { get; set; }
-        public DbSet<Ivertinimas> Ivertinimai { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

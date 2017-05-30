@@ -28,8 +28,8 @@
     @if (ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString() == "Rezervation")
     {
         <li>@Html.ActionLink("Peržiūrėti vietas", "Index", "Rezervation")</li>
-        <li>@Html.ActionLink("Peržiūrėti mano rezervacijas", "RezervationListView", "Rezervation")</li>
-        <li>@Html.ActionLink("Peržiūrėti kvietimus", "MyInvitationListView", "Rezervation")</li>
+        <li>@Html.ActionLink("Peržiūrėti mano rezervacijas", "", "Rezervation")</li>
+        <li>@Html.ActionLink("Peržiūrėti kvietimus", "", "Rezervation")</li>
     }
 
     <li class="dropdown-submenu">

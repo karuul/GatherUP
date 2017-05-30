@@ -354,9 +354,6 @@
     <Content Include="Views\CompanyOwner\Place.cshtml" />
     <Content Include="Views\CompanyOwner\EditPlace.cshtml" />
     <Content Include="Views\Administrator\EditUser.cshtml" />
-    <Content Include="Views\Rezervation\MyInvitationListView.cshtml" />
-    <Content Include="Views\Rezervation\RezervationListView.cshtml" />
-    <Content Include="Views\Rezervation\PlaceRateView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
