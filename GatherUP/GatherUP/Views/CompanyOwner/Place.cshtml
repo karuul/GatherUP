@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GatherUP.Models.Vieta>
+﻿@model GatherUP.ViewModels.EditView
 
 @{
     ViewBag.Title = "Place";
@@ -6,31 +6,40 @@
 }
 
 <h2>Vietos peržiūra</h2>
-@if (!Model.Any())
+@using (Html.BeginForm("Places", "CompanyOwner", FormMethod.Post))
 {
-    <p>Klaida!!!!</p>
-}
-else
-{
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Pavadinimas</th>
-                <th>Aprašymas</th>
-                <th>Adresas</th>
-                <th>Pakeitimai</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var place in Model)
-            {
-                <tr>
-                    <td>@place.Pavadinimas</td>
-                    <td>@place.Aprasymas</td>
-                    <td>@place.Adresas</td>
-                    <td><li><a href="/CompanyOwner/editplace/@place.Id">Redaguoti vietą</a></li></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
+        <div class="row">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Pavadinimas</th>
+                        <th>Aprašymas</th>
+                        <th>Adresas</th>
+                        <th>Pakeitimai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var place in Model.list)
+                    {
+
+                        <tr>
+                            <td>@place.Pavadinimas</td>
+                            <td>@place.Aprasymas</td>
+                            <td>@place.Adresas</td>
+                            <td><a href="/CompanyOwner/editplace/@place.Id">Redaguoti vietą</a></td>
+                            @Html.Hidden("id", place.Id)
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+        
+            <div class="row">
+                <div >
+                    <input type="submit" name="istrinti" value="Ištrinti" class="btn btn-default "/> 
+                </div>
+            </div>
+
+    }
+

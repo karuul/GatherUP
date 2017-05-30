@@ -278,6 +278,7 @@
     <Compile Include="Models\Vieta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\EditView.cs" />
     <Compile Include="ViewModels\VartotojasLogin.cs" />
   </ItemGroup>
   <ItemGroup>
