@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GatherUP.Models.Rezervacija>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Rezervuotų vietų sąrašas</h2>
+@if (!Model.Any())
+{
+    <p>Pakolkas nėra jokių vietų</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Busena</th>
+                <th>Data</th>
+                <th>Zinute</th>
+                <th>Įvertinti</th>
+                <th>Atšaukti</th>
+                <th>Siusti pakvietima</th>
+                <th>Tvarkyti pap. paslaugas</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                <tr>
+                    <td>@reservation.Busena</td>
+                    <td>@reservation.Data</td>
+                    <td>@reservation.Zinute</td>
+                    <td>@Html.ActionLink((reservation.Busena == 0 ? "" : "") + " RATE", "PlaceRateView", "Rezervation", new { Prisijungimo_vardas = reservation.Id }, new { title = "Rate" } ) </td>
+                    <td>@Html.ActionLink((reservation.Busena == 0 ? "Priimti" : "Atšaukti") + " rezervaciją", "ChangeState", "Rezervation", new { Prisijungimo_vardas = reservation.Id }, new { onclick = "return confirm('Ar tikrai?')" }) </td>
+                    <td>Siusti pakvietima</td>
+                    <td>Tvarkyti pap. paslaugas</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

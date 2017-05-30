@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GatherUP.Models.Vieta>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Vietų sąrašas</h2>
+@if (!Model.Any())
+{
+    <p>Pakolkas nėra jokių vietų</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Pavadinimas</th>
+                <th>Aprašymas</th>
+                <th>Adresas</th>
+                <th>Reitingas</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var place in Model)
+            {
+                <tr>
+                    <td>@place.Pavadinimas</td>
+                    <td>@place.Aprasymas</td>
+                    <td>@place.Adresas</td>
+                    <td>
+                        <select id="dropdown" name="dropdown">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
+                    <td>@Html.ActionLink( "Įvertinti", "RatePlace", "Rezervation", new { Prisijungimo_vardas = 5 }, new { title = "Rate" }) </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<script>
+    var e = document.getElementById("test");
+    var strUser = e.options[e.selectedIndex].value;
+</script>
