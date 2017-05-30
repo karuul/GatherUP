@@ -8,7 +8,7 @@
     @if (ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString() == "CompanyOwner")
     {
         <li>@Html.ActionLink("Vietų sąrašas", "Index", "CompanyOwner")</li>
-        <li>@Html.ActionLink("Registruoti vietą", "", "CompanyOwner")</li>
+        <li>@Html.ActionLink("Registruoti vietą", "RegisterPlace", "CompanyOwner")</li>
     }
 
     @if (ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString() == "RegionManager")

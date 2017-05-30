@@ -352,6 +352,9 @@
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Administrator\RegisterManager.cshtml" />
+    <Content Include="Views\CompanyOwner\RegisterPlace.cshtml" />
+    <Content Include="Views\CompanyOwner\Place.cshtml" />
+    <Content Include="Views\CompanyOwner\EditPlace.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
