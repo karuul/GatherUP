@@ -1,4 +1,4 @@
-﻿@model GatherUP.Models.Vartotojas
+﻿@model GatherUP.ViewModels.VartotojasLogin
 
 @{
     ViewBag.Title = "Prisijungti";
@@ -30,13 +30,6 @@
                 @Html.ValidationMessageFor(model => model.Slaptazodis, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            <div class="col-md-10">
-                @Html.ValidationMessageFor(model => model.Ar_uzblokuotas, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

@@ -23,8 +23,8 @@
         <li>@Html.ActionLink("Prisijungti", "Login", "User")</li>
         <li>@Html.ActionLink("Registruotis", "Register", "User")</li>
     }
-    
-    
+
+
     @if (ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString() == "Rezervation")
     {
         <li>@Html.ActionLink("Peržiūrėti vietas", "Index", "Rezervation")</li>
@@ -42,4 +42,23 @@
             <li><a href="#">@Html.ActionLink("Administratorius", "Index", "Administrator")</a></li>
         </ul>
     </li>
+    @{
+        switch (ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString())
+        {
+            case "Administrator":
+                <li><a href="#">Jūsų rolė - <b>Administratorius</b></a></li>
+                break;
+
+            case "CompanyOwner":
+                <li><a href="#">Jūsų rolė - <b>Savininkas</b></a></li>
+                break;
+            case "RegionManager":
+                <li><a href="#">Jūsų rolė - <b>Vadybininkas</b></a></li>
+                break;
+            case "Rezervation":
+                <li><a href="#">Jūsų rolė - <b>Narys</b></a></li>
+                break;
+
+        }
+    }
 </ul>

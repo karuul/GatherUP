@@ -32,7 +32,8 @@ namespace GatherUP.Controllers
 
         public ViewResult BlockUser(string Prisijungimo_vardas)
         {
-            Vartotojas tikrasVartotojas = _context.Vartotojai.SingleOrDefault(c => c.Prisijungimo_vardas == Prisijungimo_vardas);
+            Vartotojas tikrasVartotojas =
+                _context.Vartotojai.SingleOrDefault(c => c.Prisijungimo_vardas == Prisijungimo_vardas);
 
             if (tikrasVartotojas != null)
             {
@@ -47,6 +48,7 @@ namespace GatherUP.Controllers
             return View("Index", vartotojai);
         }
 
+        [HttpPost]
         public ViewResult RegisterManager(Vartotojas vartotojas)
         {
             if (ModelState.IsValid)
@@ -59,7 +61,31 @@ namespace GatherUP.Controllers
                 return View("Index", vartotojai);
             }
             return View();
-            
+        }
+
+        public ViewResult RegisterManager()
+        {
+            return View();
+        }
+
+        public ActionResult EditUser(string Prisijungimo_vardas)
+        {
+            Vartotojas vartotojas = _context.Vartotojai.SingleOrDefault(c => c.Prisijungimo_vardas == Prisijungimo_vardas);
+
+            if (vartotojas == null)
+            {
+                return HttpNotFound();
+            }
+            return View(vartotojas);
+        }
+
+        [HttpPost]
+        public ViewResult EditUser(Vartotojas vartotojas)
+        {
+            _context.Vartotojai.AddOrUpdate(vartotojas);
+            _context.SaveChanges();
+            var vartotojai = _context.Vartotojai.ToList();
+            return View("Index", vartotojai);
         }
     }
 }

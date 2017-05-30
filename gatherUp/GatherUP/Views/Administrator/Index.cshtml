@@ -6,22 +6,23 @@
 
 
 
-<h2>Customers</h2>
+<h2>Vartotojų sąrašas</h2>
 @if (!Model.Any())
 {
-    <p>We don't have any users yet.</p>
+    <p>Pakolkas nėra jokių vartotojų.</p>
 }
 else
 {
     <table class="table table-bordered table-hover">
         <thead>
-        <tr>
-            <th>Prisijungimo vardas</th>
-            <th>Vardas</th>
-            <th>Pavardė</th>
-            <th>Užblokuotas?</th>
-            <th>Blokuoti vartotoją</th>
-        </tr>
+            <tr>
+                <th>Prisijungimo vardas</th>
+                <th>Vardas</th>
+                <th>Pavardė</th>
+                <th>Užblokuotas?</th>
+                <th>Blokuoti vartotoją</th>
+                <th>Redaguoti vartotoją</th>
+            </tr>
         </thead>
         <tbody>
         @foreach (var user in Model)
@@ -31,7 +32,8 @@ else
                 <td>@user.Vardas</td>
                 <td>@user.Pavarde</td>
                 <td>@(user.Ar_uzblokuotas == 0 ? "Ne" : "Taip")</td>
-                <td>@Html.ActionLink((user.Ar_uzblokuotas == 0 ? "Blokuoti" : "Atblokuoti") + " vartotoją", "BlockUser", "Administrator", new { Prisijungimo_vardas = user.Prisijungimo_vardas}, new { onclick = "return confirm('Ar tikrai norite pašalinti šį vartotoją?')"}) </td>
+                <td>@Html.ActionLink((user.Ar_uzblokuotas == 0 ? "Blokuoti" : "Atblokuoti") + " vartotoją", "BlockUser", "Administrator", new { Prisijungimo_vardas = user.Prisijungimo_vardas}, new { onclick = "return confirm('Ar tikrai?')"}) </td>
+                <td>@Html.ActionLink("Redaguoti", "EditUser", "Administrator", new { Prisijungimo_vardas = user.Prisijungimo_vardas}, null)</td>
             </tr>
         }
         </tbody>

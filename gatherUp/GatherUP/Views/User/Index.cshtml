@@ -11,27 +11,6 @@
 }
 else
 {
-    @*<table class="table table-bordered table-hover">
-        <thead>
-        <tr>
-            <th>Pavadinimas</th>
-            <th>Aprašymas</th>
-            <th>Adresas</th>
-            <th>Rezervuoti?</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var place in Model)
-        {
-            <tr>
-                <td>@place.Pavadinimas</td>
-                <td>@place.Aprasymas</td>
-                <td>@place.Adresas</td>
-                <td>Rezervuoti</td>
-            </tr>
-        }
-        </tbody>
-    </table>*@
     foreach (var place in Model)
      {
          <div class="place">
@@ -48,9 +27,6 @@ else
              <div class="col-sm-2 text-center">
                  @place.Adresas
              </div>
-             @*<div class="text-center">
-                 Rezervuoti
-             </div>*@
          </div>
      }
 }

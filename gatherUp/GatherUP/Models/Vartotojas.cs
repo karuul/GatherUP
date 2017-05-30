@@ -30,6 +30,7 @@ namespace GatherUP.Models
         public string El_pastas { get; set; }
 
         [Display(Name = "Gimimo data")]
+        [DataType(DataType.Date)]
         public DateTime? Gimimo_data { get; set; }
 
         public byte? Ar_uzblokuotas { get; set; }

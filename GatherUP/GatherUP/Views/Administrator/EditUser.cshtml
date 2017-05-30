@@ -1,18 +1,21 @@
 ﻿@model GatherUP.Models.Vartotojas
 
 @{
-    ViewBag.Title = "Registruotis";
+    ViewBag.Title = "EditUser";
 }
 
-<h2>Registruotis</h2>
+<h2>Redaguoti vartotoją</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
+        <h4>Vartotojo prisijungimo vardas: <b>@Model.Prisijungimo_vardas</b></h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Prisijungimo_vardas)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Vardas, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -60,10 +63,12 @@
                 @Html.ValidationMessageFor(model => model.Miestas, "", new { @class = "text-danger" })
             </div>
         </div>
+        
+        @Html.HiddenFor(model => model.Ar_uzblokuotas)
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Registruotis" class="btn btn-default" />
+                <input type="submit" value="Išsauogti" class="btn btn-default" />
             </div>
         </div>
     </div>
