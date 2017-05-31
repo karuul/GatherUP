@@ -104,33 +104,5 @@ namespace GatherUP.Controllers
             }
             return View();
         }
-
-        public RedirectToRouteResult Administrator()
-        {
-            return RedirectToAction("Index", "Administrator");
-        }
-
-        public RedirectToRouteResult Rezervation()
-        {
-            return RedirectToAction("Index", "Rezervation");
-        }
-
-        public RedirectToRouteResult CompanyOwner()
-        {
-            return RedirectToAction("OwnerIndex", "CompanyOwner", new { istaigosSavininkas = "savininkozmona"});
-        }
-
-        public RedirectToRouteResult RegionManager()
-        {
-            return RedirectToAction("Index", "RegionManager");
-        }
-
-        public ViewResult Manager()
-        {
-            List<Vartotojas> users = _context.Vartotojai.ToList();
-
-            return View("~/Views/Administrator/Index.cshtml", users);
-        }
-
     }
 }

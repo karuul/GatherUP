@@ -11,7 +11,8 @@ namespace GatherUP.Controllers
 {
     public class AdministratorController : Controller
     {
-        private ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
+        private readonly VartotojasRepository _interfeis = new VartotojasRepository(new ApplicationDbContext());
 
         public AdministratorController()
         {
@@ -26,26 +27,19 @@ namespace GatherUP.Controllers
 
         public ViewResult Index()
         {
-            var vartotojai = _context.Vartotojai.ToList();
-            return View(vartotojai);
+            return View(_interfeis.GetAll());
         }
 
         public ViewResult BlockUser(string Prisijungimo_vardas)
         {
-            Vartotojas tikrasVartotojas =
-                _context.Vartotojai.SingleOrDefault(c => c.Prisijungimo_vardas == Prisijungimo_vardas);
+            Vartotojas tikrasVartotojas = _interfeis.GetById(Prisijungimo_vardas);
 
             if (tikrasVartotojas != null)
             {
-                if (tikrasVartotojas.Ar_uzblokuotas == 0)
-                    tikrasVartotojas.Ar_uzblokuotas = 1;
-                else
-                    tikrasVartotojas.Ar_uzblokuotas = 0;
-                _context.Vartotojai.AddOrUpdate(tikrasVartotojas);
-                _context.SaveChanges();
+                tikrasVartotojas.Ar_uzblokuotas = (byte?) (tikrasVartotojas.Ar_uzblokuotas == 0 ? 1 : 0);
+                _interfeis.EditUser(tikrasVartotojas);
             }
-            var vartotojai = _context.Vartotojai.ToList();
-            return View("Index", vartotojai);
+            return View("Index", _interfeis.GetAll());
         }
 
         [HttpPost]
@@ -55,10 +49,8 @@ namespace GatherUP.Controllers
             {
                 vartotojas.VartotojoTipas = VartotojoTipas.savininkas;
                 vartotojas.Ar_uzblokuotas = 0;
-                _context.Vartotojai.Add(vartotojas);
-                _context.SaveChanges();
-                var vartotojai = _context.Vartotojai.ToList();
-                return View("Index", vartotojai);
+                _interfeis.RegisterManager(vartotojas);
+                return View("Index", _interfeis.GetAll());
             }
             return View();
         }
@@ -70,7 +62,7 @@ namespace GatherUP.Controllers
 
         public ActionResult EditUser(string Prisijungimo_vardas)
         {
-            Vartotojas vartotojas = _context.Vartotojai.SingleOrDefault(c => c.Prisijungimo_vardas == Prisijungimo_vardas);
+            Vartotojas vartotojas = _interfeis.GetById(Prisijungimo_vardas);
 
             if (vartotojas == null)
             {
@@ -82,10 +74,8 @@ namespace GatherUP.Controllers
         [HttpPost]
         public ViewResult EditUser(Vartotojas vartotojas)
         {
-            _context.Vartotojai.AddOrUpdate(vartotojas);
-            _context.SaveChanges();
-            var vartotojai = _context.Vartotojai.ToList();
-            return View("Index", vartotojai);
+            _interfeis.EditUser(vartotojas);
+            return View("Index", _interfeis.GetAll());
         }
     }
 }
